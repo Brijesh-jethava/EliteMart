@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
     cors({
-        origin:"http://localhost:5173",
+        origin:"https://elitemart-5.onrender.com",
         methods:['GET','POST','DELETE','PUT'],
         allowedHeaders:[
             'Content-Type',
