@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const dotenv = require("dotenv").config();
 const authRouter = require('./routes/auth/auth-routes')
 const adminProductRouter = require('./routes/admin/products-routes')
 const shopProductRouter = require('./routes/shop/products-routes')
@@ -16,7 +17,7 @@ const commonFeatureRouter = require('./routes/common/feature-routes');
 const app = express();
 
 mongoose.
-   connect('mongodb+srv://Brijesh_Jethava:Brijesh%405904@cluster0.4wzoe.mongodb.net/'
+   connect(process.env.MONGO_URI, 
    )
    .then(()=>console.log("Database connected successfuly..."))
    .catch((error)=>console.log(error));
